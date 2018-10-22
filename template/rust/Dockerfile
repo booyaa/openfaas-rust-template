@@ -1,4 +1,4 @@
-FROM rust:1.27.1
+FROM rust:1.29.2
 
 RUN apt-get update -qy \
     && apt-get install -qy curl ca-certificates --no-install-recommends \ 
@@ -21,4 +21,3 @@ HEALTHCHECK --interval=2s CMD [ -e /tmp/.lock ] || exit 1
 ENV fprocess=main
 
 CMD ["fwatchdog"]
-
