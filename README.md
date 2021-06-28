@@ -6,7 +6,7 @@ This was featured in a blog post I wrote: https://booyaa.wtf/2018/run-rust-in-op
 
 ```shell
 faas-cli template pull https://github.com/booyaa/openfaas-rust-template
-faas-cli new trustinrust --language rust
+faas-cli new trustinrust --lang rust
 ```
 
 ## License
