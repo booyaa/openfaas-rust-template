@@ -15,7 +15,7 @@ RUN cd main && cargo build --release
 RUN cd main && cargo install --target x86_64-unknown-linux-musl --path .
 
 # Runner stage
-FROM alpine:3.12 as runner 
+FROM alpine:3.15.0 as runner 
 
 RUN apk --no-cache add curl ca-certificates \
     && addgroup -S app && adduser -S -g app app
