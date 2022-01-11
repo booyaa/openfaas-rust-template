@@ -5,6 +5,8 @@ FROM rust:1.57.0-alpine AS builder
 
 RUN rustup target add x86_64-unknown-linux-musl
 
+RUN apk add musl-dev
+
 RUN USER=root
 WORKDIR /usr/src/openfaas
 COPY function ./function
