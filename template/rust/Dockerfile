@@ -1,4 +1,4 @@
-FROM openfaas/classic-watchdog:0.18.0 as watchdog
+FROM openfaas/classic-watchdog:0.20.1 as watchdog
 
 # Build Stage
 FROM rust:1.57.0-alpine AS builder
