@@ -1,15 +1,20 @@
-
-use std::io::{self, Read};
+use std::io;
 
 extern crate handler;
 
-fn main() -> io::Result<()> {
-    let mut buffer = String::new();
-    let stdin = io::stdin();
-    let mut handle = stdin.lock();
+#[tokio::main]
+async fn main() -> io::Result<()> {
 
-    handle.read_to_string(&mut buffer)?;
-    
-    println!("{}", handler::handle(buffer));
+    let stdin = io::stdin();
+    let handle = stdin.lock();
+
+    let req = serde_json::from_reader(handle).expect("Deserializing input");
+
+    let response_obj = handler::handle(req).await;
+
+    let response = serde_json::to_string(&response_obj).unwrap();
+
+    println!("{}", response);
+
     Ok(())
 }

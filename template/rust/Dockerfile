@@ -12,7 +12,7 @@ WORKDIR /usr/src/openfaas
 COPY function ./function
 COPY main ./main
 
-RUN cd main && cargo build --release
+RUN cd "function" && cargo build --release
 
 RUN cd main && cargo install --target x86_64-unknown-linux-musl --path .
 
