@@ -1,5 +1,5 @@
 # Build Stage
-FROM rust:1.37.0-alpine AS builder
+FROM rust:1.68.1-alpine AS builder
 
 RUN rustup target add x86_64-unknown-linux-musl
 
@@ -8,6 +8,8 @@ WORKDIR /usr/src/openfaas
 COPY function ./function
 COPY main ./main
 
+
+RUN apk add build-base
 RUN cd main && cargo build --release
 
 RUN cd main && cargo install --target x86_64-unknown-linux-musl --path .
