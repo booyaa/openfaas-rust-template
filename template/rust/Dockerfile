@@ -1,5 +1,3 @@
-FROM openfaas/classic-watchdog:0.18.0 as watchdog
-
 # Build Stage
 FROM rust:1.37.0-alpine AS builder
 
@@ -20,7 +18,7 @@ FROM alpine:3.12 as runner
 RUN apk --no-cache add curl ca-certificates \
     && addgroup -S app && adduser -S -g app app
 
-COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
+ADD https://github.com/openfaas/faas/releases/download/0.18.10/fwatchdog /usr/bin
 RUN chmod +x /usr/bin/fwatchdog
 
 COPY --from=builder /usr/local/cargo/bin/main /usr/bin/main
