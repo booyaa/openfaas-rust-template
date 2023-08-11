@@ -1,6 +1,32 @@
 # OpenFaaS Rust Template - Abandoned
 
-Please don't use this software, it's very out of date.
+## Please don't use this software, it's very out of date.
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+_here be dragons_
 
 This was featured in a blog post I wrote: https://booyaa.wtf/2018/run-rust-in-openfaas/
 
